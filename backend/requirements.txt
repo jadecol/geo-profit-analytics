@@ -28,7 +28,7 @@ folium==0.21.0
 # Financial calculations
 numpy==2.3.2
 numpy-financial==1.0.0
-pandas==2.3.3
+pandas==2.3.2
 scipy==1.15.0
 
 # HTTP clients for APIs
