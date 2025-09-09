@@ -1,51 +1,26 @@
-# Core FastAPI
 fastapi==0.116.1
 uvicorn[standard]==0.35.0
 python-multipart==0.0.20
-
-# Database
 SQLAlchemy==2.0.43
 psycopg2-binary==2.9.10
 alembic==1.14.0
-
-# Configuration
 pydantic==2.11.7
 pydantic-settings==2.6.1
 python-dotenv==1.1.1
-
-# Security
 python-jose[cryptography]==3.5.0
 passlib[bcrypt]==1.7.4
 bcrypt==4.3.0
-
-# Geospatial
-GeoAlchemy2==0.18.0
 shapely==2.1.1
-rasterio==1.4.3
 Pillow==11.1.0
-folium==0.21.0
-
-# Financial calculations
-numpy==2.3.2
+folium==0.18.0
+numpy==1.26.4
 numpy-financial==1.0.0
-pandas==2.3.2
-scipy==1.15.0
-
-# HTTP clients for APIs
+pandas==2.2.0
+scipy==1.14.0
 httpx==0.28.1
 requests==2.32.3
-
-# Template engine for reports
 Jinja2==3.1.4
-
-# PDF generation (optional)
-# weasyprint==62.3  # Uncomment if PDF generation is needed
-
-# Testing
 pytest==8.3.3
 pytest-asyncio==0.25.0
-httpx==0.28.1
-
-# Utils
 typing-extensions==4.15.0
 python-dateutil==2.9.0
