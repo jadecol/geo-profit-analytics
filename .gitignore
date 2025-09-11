@@ -91,3 +91,6 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.temp
+
+# Temporal - excluir package-lock.json pesado
+package-lock.json
