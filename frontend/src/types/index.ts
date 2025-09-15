@@ -1,16 +1,26 @@
 ﻿export interface Project {
-  id: string;
+  id: number;
   name: string;
-  location: {
-    lat: number;
-    lng: number;
-  };
-  status: 'active' | 'completed' | 'planned';
+  description?: string;
+  location: string;
+  status: string;
+  zone_type: string;
+  total_area: number;
+  terrain_value: number;
+  construction_cost_per_m2: number;
+  investment_horizon: number;
+  npv?: number;
+  irr?: number;
+  created_at: string;
 }
 
-export interface AnalysisResult {
-  projectId: string;
-  profitability: number;
-  sustainability: number;
-  risk: number;
+export interface ProjectFormData {
+  name: string;
+  description: string;
+  location: string;
+  zone_type: string;
+  total_area: number;
+  terrain_value: number;
+  construction_cost_per_m2: number;
+  investment_horizon: number;
 }
