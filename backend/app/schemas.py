@@ -223,7 +223,7 @@ class ProjectListResponse(BaseModel):
     pages: int
 
 # Validators
-@validator('lot_polygon')
+# @validator('lot_polygon')
 def validate_polygon(cls, v):
     if v and v.type != "Polygon":
         raise ValueError('Geometry must be a Polygon')

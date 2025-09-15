@@ -23,7 +23,8 @@ class Project(Base):
     name = Column(String(255), index=True, nullable=False)
     description = Column(Text)
     location = Column(String(500), nullable=False)
-    status = Column(Enum(ProjectStatus), default=ProjectStatus.DRAFT)
+    #status = Column(Enum(ProjectStatus), default=ProjectStatus.DRAFT)
+    status = Column(String(50), default='draft')
     
     # Geometría del lote
     lot_polygon = Column(JSON)  # GeoJSON del polígono
@@ -36,7 +37,8 @@ class Project(Base):
     terrain_value = Column(Float, nullable=False)  # USD
     construction_cost_per_m2 = Column(Float, nullable=False)  # USD/m²
     investment_horizon = Column(Integer, nullable=False)  # años
-    zone_type = Column(Enum(ZoneType), nullable=False)
+    #zone_type = Column(Enum(ZoneType), nullable=False)
+    zone_type = Column(String(50), nullable=False)
     
     # Datos adicionales para análisis avanzado
     selling_price_per_m2 = Column(Float)  # USD/m²
