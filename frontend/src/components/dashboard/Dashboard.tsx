@@ -1,3 +1,4 @@
+// frontend/src/components/dashboard/Dashboard.tsx
 import React, { useState, useEffect } from 'react';
 import { projectService } from '../../services/api';
 import { Project } from '../../types';
@@ -166,7 +167,7 @@ const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
           
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
             gap: '20px'
           }}>
             {[
@@ -183,6 +184,13 @@ const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
                 action: () => onNavigate('projects'),
                 gradient: 'linear-gradient(135deg, #2196F3, #1976D2)',
                 icon: '📋'
+              },
+              {
+                title: 'Comparar Proyectos',
+                description: 'Análisis comparativo de múltiples proyectos',
+                action: () => onNavigate('comparison'),
+                gradient: 'linear-gradient(135deg, #8B5CF6, #7C3AED)',
+                icon: '📊'
               },
               {
                 title: 'Análisis Avanzado',
@@ -254,7 +262,11 @@ const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
                     cursor: 'pointer',
                     transition: 'all 0.3s ease'
                   }}
-                  onClick={() => onNavigate('analysis', { projectId: project.id, projectName: project.name })}
+                  onClick={() => onNavigate('integrated', { 
+                    projectId: project.id, 
+                    projectName: project.name,
+                    projectLocation: project.location 
+                  })}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)';
                     e.currentTarget.style.transform = 'translateX(5px)';
