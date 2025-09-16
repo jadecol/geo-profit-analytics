@@ -1,4 +1,4 @@
-﻿// frontend/src/services/api.ts
+﻿// frontend/src/services/api.ts - REEMPLAZAR TODO EL ARCHIVO
 import axios from 'axios';
 
 const API_BASE_URL = 'http://localhost:8000';
@@ -29,7 +29,7 @@ export const analysisService = {
 
 export const comparisonService = {
   compareProjects: (projectIds: number[]) => 
-    api.post('/projects/compare', projectIds),
+    api.post('/projects/compare', { projectIds }),
   
   getProjectRankings: (criteria: string = 'overall', limit: number = 10) =>
     api.get('/projects/ranking', { params: { criteria, limit } }),
