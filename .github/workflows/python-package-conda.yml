@@ -16,7 +16,7 @@ jobs:
         python-version: '3.10'
     - name: Add conda to system path
       run: |
-        # $CONDA is an environment variable pointing to the root of the miniconda directory
+        # $CONDA es una variable de entorno que apunta a la raíz del directorio de miniconda
         echo $CONDA/bin >> $GITHUB_PATH
     - name: Install dependencies
       run: |
@@ -24,11 +24,18 @@ jobs:
     - name: Lint with flake8
       run: |
         conda install flake8
-        # stop the build if there are Python syntax errors or undefined names
+        # detiene la compilación si hay errores de sintaxis de Python o nombres no definidos
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+        # exit-zero trata todos los errores como advertencias. El editor de GitHub tiene 127 caracteres de ancho
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
+        # Reinstala las dependencias del proyecto y pytest
+        conda env update --file environment.yml --name base
         conda install pytest
+        
+        # Añade la ruta del proyecto a PYTHONPATH para que pytest encuentre el módulo 'app'
+        export PYTHONPATH=$PWD:$PYTHONPATH
+        
+        # Ejecuta las pruebas
         pytest
